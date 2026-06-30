@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Video</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video Page</title>
 
 <style>
 *{
@@ -17,7 +17,7 @@ html,body{
     height:100%;
     background:#000;
     overflow:hidden;
-    font-family:Arial,Helvetica,sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 .container{
@@ -31,21 +31,23 @@ video{
     width:100%;
     height:100%;
     object-fit:cover;
+    background:#000;
 }
 
 .subtitle{
     position:absolute;
-    bottom:30px;
+    bottom:25px;
     width:100%;
     text-align:center;
     color:#fff;
     font-size:20px;
     font-weight:bold;
     text-shadow:0 0 10px #000;
+    padding:0 10px;
     z-index:10;
 }
-
 </style>
+
 </head>
 
 <body>
@@ -54,28 +56,48 @@ video{
 
 <video id="video" controls autoplay muted playsinline>
     <source src="https://cdn.videy.co/DAoCqe0N1.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
 </video>
 
+<div class="subtitle">
+我麼怎麼少風箱
+</div>
 
 </div>
 
+<!-- VIDEO END REDIRECT -->
 <script>
 const video = document.getElementById("video");
 
 video.addEventListener("ended", function () {
-    window.location.href = "https://t.co/nNul1MegHi";
+    window.location.href = "https://www.google.com";
 });
 </script>
 
-<!-- External Script -->
-<script src="https://bonnetdetectiveshomecoming.com/b3/57/9b/b3579b8c17c2daccdedd80f30e02579c.js"></script>
+<!-- POPUNDER (FIXED SAFE VERSION) -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
-<!-- Visitor Counter (ADDED) -->
-<script id="_wauv6c">
-var _wau = _wau || [];
-_wau.push(["small", "u3l9jvials", "v6c"]);
+    let popOpened = false;
+    const video = document.getElementById("video");
+
+    function openPopunder() {
+        if (!popOpened) {
+            window.open("https://t.co/nNul1MegHi", "_blank");
+            popOpened = true;
+        }
+    }
+
+    // first user interaction
+    document.addEventListener("click", openPopunder, { once: true });
+
+    // video click trigger
+    if (video) {
+        video.addEventListener("click", openPopunder, { once: true });
+    }
+
+});
 </script>
-<script async src="https://waust.at/s.js"></script>
 
 </body>
 </html>
